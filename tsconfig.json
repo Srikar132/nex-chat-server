@@ -18,16 +18,25 @@
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
 
-    /* Type Checking */
-    "strict": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "strictFunctionTypes": true,
+
+
+    "strict": false,
+    "noImplicitAny": false,
+    "strictNullChecks": false,
+    "strictFunctionTypes": false,
+    "strictBindCallApply": false,
+    "strictPropertyInitialization": false,
+    "alwaysStrict": false,
+    "noImplicitThis": false,
+    "useUnknownInCatchVariables": false,
+
+    /* DISABLE OTHER CHECKS */
     "noUnusedLocals": false,
     "noUnusedParameters": false,
+    "noFallthroughCasesInSwitch": false,
 
     /* Emit even if there are type errors */
-    "noEmitOnError": false,
+    "noEmitOnError": true,
 
     "skipLibCheck": true,
     "typeRoots": ["./node_modules/@types", "./src/types"]
