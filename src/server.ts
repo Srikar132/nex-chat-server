@@ -13,8 +13,9 @@ import cookieParser from "cookie-parser";
 import { setUpSocket } from "@/socket";
 import { createServer, Server as HttpServer } from "http";
 import {ContactController} from "@/controllers/contact-handlers";
-import express, {Request , Response} from 'express';
+import express from 'express';
 import path from "path";
+import type {Response , Request} from "express";
 
 class AppServer extends Server {
   private readonly logger = new Logger();
