@@ -13,7 +13,7 @@ import cookieParser from "cookie-parser";
 import { setUpSocket } from "@/socket";
 import { createServer, Server as HttpServer } from "http";
 import {ContactController} from "@/controllers/contact-handlers";
-import express from 'express';
+import express, {Request , Response} from 'express';
 import path from "path";
 
 class AppServer extends Server {
@@ -46,7 +46,9 @@ class AppServer extends Server {
     this.app.use(bodyParser.json({ limit: '10mb' })); // Add size limit for security
     this.app.use(bodyParser.urlencoded({ extended: true, limit: '10mb' }));
     this.app.use('/uploads', express.static(path.join(process.cwd(), 'uploads')));
-
+    this.app.get('/', (_req : Request, res : Response) => {
+      res.status(200).json({ status: 'OK' });
+    });
   }
 
   private setupControllers(): void {
