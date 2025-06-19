@@ -4,7 +4,7 @@ import fs from "fs";
 import {v4 as uuidv4} from "uuid";
 
 const storage = multer.diskStorage({
-    destination: (_req, _file, cb) => {
+    destination: (_req  :any, _file : any, cb : any) => {
         // For src folder structure, go up to project root then into uploads
         const uploadDir = path.join(process.cwd(), 'uploads/avatars');
         try {
@@ -19,7 +19,7 @@ const storage = multer.diskStorage({
             cb(error as Error, '');
         }
     },
-    filename: (_req, file, cb) => {
+    filename: (_req : any, file : any, cb : any) => {
         const uniqueName = `${uuidv4()}-${Date.now()}${path.extname(file.originalname)}`;
         // console.log('Generated filename:', uniqueName);
         cb(null, uniqueName);
@@ -31,7 +31,7 @@ export const uploadAvatar = multer({
     limits: {
         fileSize: 5 * 1024 * 1024, // 5MB limit
     },
-    fileFilter: (_req, file, cb) => {
+    fileFilter: (_req : any, file : any, cb : any) => {
         const allowedMimes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'];
         if (allowedMimes.includes(file.mimetype)) {
             cb(null, true);

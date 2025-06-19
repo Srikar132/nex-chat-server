@@ -11,6 +11,7 @@ export const VerifyToken = asyncHandler(async (req : Request, res : Response, ne
         });
     }
 
+    // @ts-ignore
     const payload = jwt.verify(token, process.env.JWT_SECRET as string) as JwtPayload;
 
     if(!payload) {
