@@ -1,7 +1,7 @@
 import {Controller, Get, Middleware, Post} from "@overnightjs/core";
 import {VerifyToken} from "@/middlewares/verify";
 import {asyncHandler} from "@/utils/async-handler";
-import {Request, Response} from "express";
+import type {Request, Response} from "express";
 import mongoose from "mongoose";
 import {User} from "@/models/user";
 import Message from "@/models/message";

@@ -1,5 +1,5 @@
 import {Controller, Delete, Get, Middleware, Post, Put} from '@overnightjs/core';
-import {Response , Request} from "express"
+import type {Response , Request} from "express"
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken"
 import {asyncHandler} from "@/utils/async-handler";
